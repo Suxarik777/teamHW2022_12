@@ -2,7 +2,7 @@ from login import login
 from init import import_files
 from exports import export_files
 from checks import check_user
-from outputs import  print_menu
+from outputs import print_menu
 from inputs import menu_input
 from menu import admin, pupil, teacher
 
