@@ -7,7 +7,7 @@ from inputs import menu_input
 from menu import admin, pupil, teacher
 
 users, user_types, subjects, notebook = import_files()
-user = 	login()
+user = login()
 user_type = check_user(user, users)
 menu_item = 0
 while menu_item != 8:
