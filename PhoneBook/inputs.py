@@ -31,12 +31,12 @@ def input_file(source_path):
         return data_list_file
 
 
-def input_index() -> int:
-    input_file()
+def input_index(arr) -> int:
+#    input_file()
     uncorrect = True
     while uncorrect:
         row_numb = int(input('Введите номер требуемой записи'))
-        if row_numb <= len(input_file()):
+        if row_numb <= len(arr):
             uncorrect = False
             return row_numb
         else: print('Warning! Inputed Index Is Out Of Range\nTry Again')
@@ -50,7 +50,6 @@ def input_string() -> str:
 
 
 def input_menu_item() -> int:
-    print_menu()
     MENU_ITEMS = 7
     uncorrect = True
     menu_item = int(input('Введите пункт меню\n'))
