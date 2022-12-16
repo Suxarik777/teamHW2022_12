@@ -9,8 +9,7 @@ def input_row():
     if choosen_source == '0':
         return input_console()
     elif choosen_source == '1':
-        source_path = input('Напишите путь к файлу для записи\n')
-        return input_file(source_path)
+        return input_file()
 
 
 def input_console():
@@ -20,12 +19,13 @@ def input_console():
     return data_list
 
 
-def input_file(source_path):
+def input_file():
+    source_path = input('Напишите путь к файлу для записи\n')
     with open(source_path, 'r', encoding='utf-8') as csvfile:
         file_reader = csv.reader(csvfile, delimiter=';', skipinitialspace=False)
         data_list_file = []
         for line, row in enumerate(file_reader):
-            if line>1:
+            if line > 1:
                 file_reader_to_list = (';'.join(row)).split(';')
                 data_list_file.append(file_reader_to_list[1:])
         return data_list_file
@@ -36,7 +36,7 @@ def input_index() -> int:
     uncorrect = True
     while uncorrect:
         row_numb = int(input('Введите номер требуемой записи'))
-        if row_numb <= len(input_file()):
+        if 0 < row_numb <= len(input_file()):
             uncorrect = False
             return row_numb
         else: print('Warning! Inputed Index Is Out Of Range\nTry Again')
@@ -55,7 +55,7 @@ def input_menu_item() -> int:
     uncorrect = True
     menu_item = int(input('Введите пункт меню\n'))
     while uncorrect:
-        if menu_item <= MENU_ITEMS:# Если ввести 0 или 0< то все поломается
+        if 0 < menu_item <= MENU_ITEMS:
             uncurrect = False
             return menu_item
         else:
