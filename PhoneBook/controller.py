@@ -11,16 +11,14 @@ while menu_item != 7:
     print_menu()
     menu_item = input_menu_item()
     if menu_item == 1:
-        array = input_row()
+        input_row(array)
     elif menu_item == 2:
-        ch_index = input_index(array
-                               )
+        ch_index = input_index(array)
         array = edit(ch_index, array)
     elif menu_item == 3:
-        name_file = export_file()
-        export_item = input_menu_item()
+        export_item = export_file()
         if export_item == 1:
-            export_csv(array, name_file)
+            export_csv(array)
         if export_item == 2:
             export_xml(array)
         if export_item == 3:
