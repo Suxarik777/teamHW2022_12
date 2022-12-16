@@ -9,25 +9,26 @@ def export_file():# Функция возвращает строчку!
 
         if user_input.isdigit() and int(user_input) == 1:
             print("Вы выбрали - 1: экспорт файла в формате csv.")
-            name_file = input("Введите название файла: ")
+            #name_file = input("Введите название файла: ")
             break
         elif user_input.isdigit() and int(user_input) == 2:
             print("Вы выбрали - 2: экспорт файла в формате xml.")
-            name_file = input("Введите название файла: ")
+            #name_file = input("Введите название файла: ")
             break
         elif user_input.isdigit() and int(user_input) == 3:
             print("Вы выбрали - 3: экспорт файла в формате html.")
-            name_file = input("Введите название файла: ")
+            #name_file = input("Введите название файла: ")
             break
 #        else:
 #            print("Вы ввели что то не то! Попробуйте щее раз")
-    return user_input
+    return int(user_input)
 
 
-def export_csv(arr, name_file):
+def export_csv(arr):
+    name_file = input("Введите название файла: ")
     with open(f'{name_file}.csv', 'w', encoding='utf-8') as file:
         for text in arr:
-            res_text = ", ".join(text)
+            res_text = ";".join(text)
             file.writelines(f'{res_text}; \n')
     print(f"Экспорт файла {name_file}.csv завершен.")
 
