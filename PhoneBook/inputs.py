@@ -9,7 +9,8 @@ def input_row():
     if choosen_source == '0':
         return input_console()
     elif choosen_source == '1':
-        return input_file()
+        source_path = input('Напишите путь к файлу для записи\n')
+        return input_file(source_path)
 
 
 def input_console():
@@ -19,12 +20,11 @@ def input_console():
     return data_list
 
 
-def input_file():
-    source_path = input('Напишите путь к файлу для записи\n')
+def input_file(source_path):
     with open(source_path, 'r', encoding='utf-8') as csvfile:
         file_reader = csv.reader(csvfile, delimiter=';', skipinitialspace=False)
         data_list_file = []
-        for line,row  in enumerate(file_reader):
+        for line, row in enumerate(file_reader):
             if line>1:
                 file_reader_to_list = (';'.join(row)).split(';')
                 data_list_file.append(file_reader_to_list[1:])
