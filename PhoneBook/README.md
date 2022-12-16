@@ -8,6 +8,7 @@ acс GitHub: Suxarik777
 * Александра Мусатова - outputs.py
 
 * Цигельницкий Илья Генрихович - controller.py
+acс GitHub: tsibul
 
 * Кряжев Вячеслав Иванович -  exports.py
 
