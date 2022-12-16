@@ -55,7 +55,7 @@ def input_menu_item() -> int:
     uncorrect = True
     menu_item = int(input('Введите пункт меню\n'))
     while uncorrect:
-        if menu_item <= MENU_ITEMS:
+        if menu_item <= MENU_ITEMS:# Если ввести 0 или 0< то все поломается
             uncurrect = False
             return menu_item
         else:
